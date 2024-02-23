@@ -1,17 +1,10 @@
 import React from "react";
+import ToDoApp from "./component/ToDoApp";
 
 const App = () => {
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="container h-100 d-flex align-items-center justify-content-center">
+			<ToDoApp />
 		</div>
 	);
 };
