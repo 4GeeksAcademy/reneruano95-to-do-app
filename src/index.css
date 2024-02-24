@@ -3,3 +3,11 @@ body,
 #app {
     height: 100%;
 }
+
+.delete-icon {
+    display: none;
+}
+
+.list:hover .delete-icon {
+    display: block;
+}

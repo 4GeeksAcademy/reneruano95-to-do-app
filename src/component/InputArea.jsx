@@ -1,9 +1,16 @@
 import React from 'react'
 import { Form } from 'react-bootstrap'
 
-const InputArea = () => {
+const InputArea = (props) => {
     return (
-        <Form.Control size="lg" type="text" placeholder="What needs to be done?" />
+        <Form.Control
+            size="lg"
+            type="text"
+            placeholder={props.placeholder}
+            value={props.value}
+            onChange={props.onChange}
+            onKeyDown={props.onKeyDown}
+        />
     )
 }
 
