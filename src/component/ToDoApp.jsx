@@ -27,7 +27,7 @@ const ToDoApp = () => {
 
     return (
 
-        <div className='col-6'>
+        <div className='col-sm-12 col-md-6'>
             <InputArea
                 placeholder="What needs to be done?"
                 value={inputText}

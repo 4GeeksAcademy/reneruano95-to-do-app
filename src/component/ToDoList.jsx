@@ -11,7 +11,7 @@ const ToDoList = (props) => {
     <ListGroup className='mt-2 p-0'>
       {props.toDoItems.map((item, index) => {
         return (
-          <ListGroup.Item className='list d-flex justify-content-between' >
+          <ListGroup.Item className='list d-flex justify-content-between' variant='light' >
             <div id={index} key={index}>{item}</div>
 
             <div className='delete-icon' onClick={props.onClick} >
