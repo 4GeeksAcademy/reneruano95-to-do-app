@@ -9,7 +9,7 @@ const ToDoApp = () => {
     const [toDoItems, setToDoItems] = useState([])
 
     const handleFnInputArea = (e) => {
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' && e.target.value.trim() !== '') {
             setToDoItems((prev) => {
                 return [...prev, inputText]
             })
@@ -26,7 +26,8 @@ const ToDoApp = () => {
     const remainingItems = toDoItems.filter((item) => toDoItems).length
 
     return (
-        <Row>
+
+        <div className='col-6'>
             <InputArea
                 placeholder="What needs to be done?"
                 value={inputText}
@@ -39,10 +40,11 @@ const ToDoApp = () => {
                         toDoItems={toDoItems}
                         onClick={deleteItem}
                     />
-                    <p className='mt-2'>{remainingItems}  item{remainingItems !== 1 && 's'} left</p>
+                    <p className='mt-2 ps-3'>{remainingItems}  item{remainingItems !== 1 && 's'} left</p>
                 </>
             ) : <h1 className='text-center mt-4'> No tasks, add a task</h1>}
-        </Row>
+        </div>
+
     )
 }
 

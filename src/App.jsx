@@ -3,9 +3,13 @@ import ToDoApp from "./component/ToDoApp";
 
 const App = () => {
 	return (
-		<div className="container h-100 d-flex align-items-center justify-content-center">
-			<ToDoApp />
-		</div>
+		<>
+
+			<div className="container h-100 d-flex flex-column align-items-center justify-content-center">
+				<h1 className="mb-3">todo App</h1>
+				<ToDoApp />
+			</div>
+		</>
 	);
 };
 
