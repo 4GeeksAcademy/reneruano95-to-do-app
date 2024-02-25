@@ -8,10 +8,10 @@ const ToDoApp = () => {
     const [inputText, setInputText] = useState('')
     const [toDoItems, setToDoItems] = useState([])
 
-    const handleFnInputArea = (e) => {
+    const addItem = (e) => {
         if (e.key === 'Enter' && e.target.value.trim() !== '') {
             setToDoItems((prev) => {
-                return [...prev, inputText]
+                return [inputText, ...prev]
             })
             setInputText('')
         }
@@ -23,7 +23,7 @@ const ToDoApp = () => {
         })
     }
 
-    const remainingItems = toDoItems.filter((item) => toDoItems).length
+    const remainingItems = toDoItems.length
 
     return (
 
@@ -32,7 +32,7 @@ const ToDoApp = () => {
                 placeholder="What needs to be done?"
                 value={inputText}
                 onChange={(e) => setInputText((prev) => prev = e.target.value)}
-                onKeyDown={handleFnInputArea}
+                onKeyDown={addItem}
             />
             {toDoItems.length > 0 ? (
                 <>
@@ -42,7 +42,7 @@ const ToDoApp = () => {
                     />
                     <p className='mt-2 ps-3'>{remainingItems}  item{remainingItems !== 1 && 's'} left</p>
                 </>
-            ) : <h1 className='text-center mt-4'> No tasks, add a task</h1>}
+            ) : <h2 className='text-center mt-4'> No tasks, add a task</h2>}
         </div>
 
     )
