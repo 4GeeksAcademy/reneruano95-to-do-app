@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Row } from 'react-bootstrap';
 
 import InputArea from './InputArea';
 import ToDoList from './ToDoList';
+import { ListGroup } from 'react-bootstrap';
 
 const ToDoApp = () => {
     const [inputText, setInputText] = useState('')
@@ -17,10 +17,12 @@ const ToDoApp = () => {
         }
     }
 
-    const deleteItem = () => {
+    const deleteItem = (id) => {
         setToDoItems((prev) => {
-            return prev.filter((item, index) => index)
+            const filterFn = prev.filter((item, index) => index !== id)
+            return filterFn
         })
+
     }
 
     const remainingItems = toDoItems.length
@@ -36,10 +38,18 @@ const ToDoApp = () => {
             />
             {toDoItems.length > 0 ? (
                 <>
-                    < ToDoList
-                        toDoItems={toDoItems}
-                        onClick={deleteItem}
-                    />
+                    <ListGroup className='mt-2 p-0'>
+                        {toDoItems.map((item, index) => {
+                            return (
+                                < ToDoList
+                                    key={index}
+                                    id={index}
+                                    item={item}
+                                    onClick={() => deleteItem(index)}
+                                />
+                            )
+                        })}
+                    </ListGroup>
                     <p className='mt-2 ps-3'>{remainingItems}  item{remainingItems !== 1 && 's'} left</p>
                 </>
             ) : <h2 className='text-center mt-4'> No tasks, add a task</h2>}

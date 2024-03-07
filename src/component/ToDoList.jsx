@@ -1,27 +1,18 @@
-import React, { useState } from 'react'
-import { ListGroup } from 'react-bootstrap'
-
-import CloseButton from 'react-bootstrap/CloseButton';
-
-
+import React from 'react'
+import { ListGroup, CloseButton } from 'react-bootstrap'
 
 const ToDoList = (props) => {
 
   return (
-    <ListGroup className='mt-2 p-0'>
-      {props.toDoItems.map((item, index) => {
-        return (
-          <ListGroup.Item className='list d-flex justify-content-between' variant='light' >
-            <div id={index} key={index}>{item}</div>
+    <ListGroup.Item className='list d-flex justify-content-between' variant='light'>
+      <div id={props.id}>
+        {props.item}
+      </div>
+      <div className='delete-icon' onClick={props.onClick} >
+        <CloseButton className='ms-1' />
+      </div>
+    </ListGroup.Item>
 
-            <div className='delete-icon' onClick={props.onClick} >
-              <CloseButton className='ms-1' />
-            </div>
-
-          </ListGroup.Item>
-        )
-      })}
-    </ListGroup>
   )
 }
 
