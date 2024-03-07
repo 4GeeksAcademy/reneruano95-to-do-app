@@ -17,9 +17,9 @@ const ToDoApp = () => {
         }
     }
 
-    const deleteItem = (id) => {
+    const deleteItem = (indexToRemove) => {
         setToDoItems((prev) => {
-            const filterFn = prev.filter((item, index) => index !== id)
+            const filterFn = prev.filter((_, index) => index !== indexToRemove)
             return filterFn
         })
 
