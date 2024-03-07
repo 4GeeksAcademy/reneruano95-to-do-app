@@ -50,7 +50,7 @@ const ToDoApp = () => {
                             )
                         })}
                     </ListGroup>
-                    <p className='mt-2 ps-3'>{remainingItems}  item{remainingItems !== 1 && 's'} left</p>
+                    <p className='mt-2 ps-3'>{remainingItems} item{remainingItems !== 1 && 's'} left</p>
                 </>
             ) : <h2 className='text-center mt-4'> No tasks, add a task</h2>}
         </div>
